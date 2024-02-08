@@ -1,0 +1,14 @@
+C:\Users\Hp\Desktop\HomeTestMyself\TurboAz\TurboAz\bin\Debug\net8.0\TurboAz.exe
+C:\Users\Hp\Desktop\HomeTestMyself\TurboAz\TurboAz\bin\Debug\net8.0\TurboAz.deps.json
+C:\Users\Hp\Desktop\HomeTestMyself\TurboAz\TurboAz\bin\Debug\net8.0\TurboAz.runtimeconfig.json
+C:\Users\Hp\Desktop\HomeTestMyself\TurboAz\TurboAz\bin\Debug\net8.0\TurboAz.dll
+C:\Users\Hp\Desktop\HomeTestMyself\TurboAz\TurboAz\bin\Debug\net8.0\TurboAz.pdb
+C:\Users\Hp\Desktop\HomeTestMyself\TurboAz\TurboAz\obj\Debug\net8.0\TurboAz.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hp\Desktop\HomeTestMyself\TurboAz\TurboAz\obj\Debug\net8.0\TurboAz.AssemblyInfoInputs.cache
+C:\Users\Hp\Desktop\HomeTestMyself\TurboAz\TurboAz\obj\Debug\net8.0\TurboAz.AssemblyInfo.cs
+C:\Users\Hp\Desktop\HomeTestMyself\TurboAz\TurboAz\obj\Debug\net8.0\TurboAz.csproj.CoreCompileInputs.cache
+C:\Users\Hp\Desktop\HomeTestMyself\TurboAz\TurboAz\obj\Debug\net8.0\TurboAz.dll
+C:\Users\Hp\Desktop\HomeTestMyself\TurboAz\TurboAz\obj\Debug\net8.0\refint\TurboAz.dll
+C:\Users\Hp\Desktop\HomeTestMyself\TurboAz\TurboAz\obj\Debug\net8.0\TurboAz.pdb
+C:\Users\Hp\Desktop\HomeTestMyself\TurboAz\TurboAz\obj\Debug\net8.0\TurboAz.genruntimeconfig.cache
+C:\Users\Hp\Desktop\HomeTestMyself\TurboAz\TurboAz\obj\Debug\net8.0\ref\TurboAz.dll
