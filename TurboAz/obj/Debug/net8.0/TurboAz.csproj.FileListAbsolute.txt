@@ -12,3 +12,4 @@ C:\Users\Hp\Desktop\HomeTestMyself\TurboAz\TurboAz\obj\Debug\net8.0\refint\Turbo
 C:\Users\Hp\Desktop\HomeTestMyself\TurboAz\TurboAz\obj\Debug\net8.0\TurboAz.pdb
 C:\Users\Hp\Desktop\HomeTestMyself\TurboAz\TurboAz\obj\Debug\net8.0\TurboAz.genruntimeconfig.cache
 C:\Users\Hp\Desktop\HomeTestMyself\TurboAz\TurboAz\obj\Debug\net8.0\ref\TurboAz.dll
+C:\Users\Hp\Desktop\HomeTestMyself\TurboAz\TurboAz\obj\Debug\net8.0\TurboAz.sourcelink.json

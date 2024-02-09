@@ -1,4 +1,6 @@
-﻿using TurboAz.Extensions;
+﻿using System;
+using TurboAz.Enums;
+using TurboAz.Extensions;
 using TurboAz.Models;
 
 namespace TurboAz
@@ -13,16 +15,21 @@ namespace TurboAz
             int answer;
             do
             {
-                Console.WriteLine("1 - Marka elave ele :");
+                Console.WriteLine("1 - Marka elave ele: ");
                 Console.WriteLine("2 - Marka sil :");
-                Console.WriteLine("3 - Marka hamisin goster :");
-                Console.WriteLine("4 - Marka Id ile axtar :");
-                Console.WriteLine("5 - Marka duzelish ele :");
-                Console.WriteLine("6 - Model elave ele :");
-                Console.WriteLine("7 - Model sil :");
-                Console.WriteLine("8 - Butun modelleri goster :");
-                Console.WriteLine("9 - Model Id ile axtar :");
-                Console.WriteLine("10 - Modele duzelish ele :");
+                Console.WriteLine("3 - Marka hamisin goster: ");
+                Console.WriteLine("4 - Marka Id ile axtar: ");
+                Console.WriteLine("5 - Marka duzelish ele: ");
+
+
+                Console.WriteLine("6 - Model elave ele: ");
+                Console.WriteLine("7 - Model sil: ");
+                Console.WriteLine("8 - Butun modelleri goster: ");
+                Console.WriteLine("9 - Model Id ile axtar: ");
+                Console.WriteLine("10 - Modele duzelish ele: ");
+
+
+                Console.WriteLine("11 - Elan elave ele: ");
 
                 answer = Helper.ReadInt("Siayhidan secim edin", "Sehv daxil etdiniz");
 
@@ -59,12 +66,147 @@ namespace TurboAz
                     case 10:
                         EditModel();
                         break;
+                    case 11:
+                        AddAnouncement();
+                        break;
                     default:
                         break;
                 }
 
             } while (true);
 
+
+        }
+
+        private static void AddAnouncement()
+        {
+            int modelId;
+            double price;
+            int march;
+            int fuelTypeNum;
+            int gearBoxNum;
+            int transmissionNum;
+            int bannerNum;
+
+            Console.WriteLine("Elan yaratmaq ucun Modellerden birini secin");
+
+            foreach (var item in modelList)
+            {
+                Console.WriteLine($"Id - {item.Id} Adi - {item.Name}  Marka - {item.Marka.Name}");
+            }
+        l1:
+            modelId = Helper.ReadInt("Modelin Id-sini daxil edin", "Sehv daxil etdiniz");
+            Model model = modelList.FirstOrDefault(m => m.Id == modelId);
+            if (model == null)
+            {
+                Console.WriteLine("Secdiyiniz Id-ile model yoxdur !");
+                goto l1;
+            }
+
+            l2:
+            price = Helper.ReadDouble("Qiymeti daxil edin","Sehv daxil etdiniz!");
+            if (price < 300)
+            {
+                Console.WriteLine("Daxil etdiyiniz giymet minimumdan balacadi!");
+                goto l2;
+            }
+            l3:
+            march = Helper.ReadInt("Avtomobilin yurushunu daxil edin!", "Sehv daxil etdiniz!");
+            if (march < 0)
+            {
+                Console.WriteLine("Yurush 0-dan balaca ola bilmez!");
+                goto l3;
+            }
+
+           
+            foreach (var item in Enum.GetValues(typeof(FuelType)))
+            {
+                Console.WriteLine($"{(int)item}-{item}");
+            }
+            FuelType fuelType;
+            l4:
+            fuelTypeNum = Helper.ReadInt("FuelType Secin:", "Sehv daxil etdiniz!");
+
+            if (Enum.IsDefined(typeof(FuelType), fuelTypeNum))
+            {
+                fuelType = (FuelType)fuelTypeNum;
+            }
+            else
+            {
+                Console.WriteLine("Sehv secim etdiniz1 yeniden cehd edin!");
+                goto l4;
+            }
+
+            GearBox gearBox;
+            l5:
+            foreach (var item in Enum.GetValues(typeof(GearBox)))
+            {
+                Console.WriteLine($"{(int)item}-{item}");
+            }
+            gearBoxNum = Helper.ReadInt("Suretler qutusunu Secin:", "Sehv daxil etdiniz!");
+
+            if (Enum.IsDefined(typeof(GearBox), gearBoxNum))
+            {
+                gearBox = (GearBox)gearBoxNum;
+            }
+            else
+            {
+                Console.WriteLine("Sehv secim etdiniz1 yeniden cehd edin!");
+                goto l5;
+            }
+
+            Transmission transmission;
+            foreach (var item in Enum.GetValues(typeof(Transmission)))
+            {
+                Console.WriteLine($"{(int)item}-{item}");
+            }
+        l6:
+            transmissionNum = Helper.ReadInt("Oturucunu Secin:", "Sehv daxil etdiniz!");
+
+            if (Enum.IsDefined(typeof(Transmission), transmissionNum))
+            {
+                transmission = (Transmission)transmissionNum;
+            }
+            else
+            {
+                Console.WriteLine("Sehv secim etdiniz1 yeniden cehd edin!");
+                goto l6;
+            }
+        l7:
+            Banner banner;
+            foreach (var item in Enum.GetValues(typeof(Banner)))
+            {
+                Console.WriteLine($"{(int)item}-{item}");
+            }
+
+            bannerNum = Helper.ReadInt("Ban novunu Secin:", "Sehv daxil etdiniz!");
+
+            if (Enum.IsDefined(typeof(Banner), bannerNum))
+            {
+                banner = (Banner)bannerNum;
+            }
+            else
+            {
+                Console.WriteLine("Sehv secim etdiniz1 yeniden cehd edin!");
+                goto l7;
+            }
+
+            Anouncement anouncement = new Anouncement();
+            anouncement.Banner = banner;
+            anouncement.Transmission = transmission;
+            anouncement.Price = price;
+            anouncement.GearBox = gearBox;
+            anouncement.FuelType = fuelType;
+            anouncement.March = march;
+            anouncement.Model = model;
+            
+            anouncementList.Add(anouncement);
+
+            Console.Clear();
+            Console.WriteLine("Yeni elan elave edildi !");
+            Console.WriteLine($"Info : Id-{anouncement.Id}, Banner-{anouncement.Banner} Yurush - {anouncement.March} " +
+                $" Suretler qutusu novu - {anouncement.GearBox} Fuel Type - {anouncement.FuelType} Modeli - {anouncement.Model}" +
+                $"Marka - {anouncement.Model.Marka.Name}  Qiymeti - {anouncement.Price} Oturucu novu - {anouncement.Transmission}");
 
         }
 
@@ -222,7 +364,7 @@ namespace TurboAz
             string newMarkaName = Helper.ReadString("Markanin yeni adini daxil edin:", "Sehv daxil etdiniz");
             marka.Name = newMarkaName;
 
-            Console.WriteLine( "Deyisiklik edildi! \n");
+            Console.WriteLine("Deyisiklik edildi! \n");
 
         }
 

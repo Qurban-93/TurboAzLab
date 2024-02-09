@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TurboAz")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+47735bd848c387af40bfa20e8dd78366306e071b")]
 [assembly: System.Reflection.AssemblyProductAttribute("TurboAz")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TurboAz")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
